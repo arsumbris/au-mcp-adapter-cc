@@ -1,0 +1,9 @@
+# Security overrides for transitive deps of @modelcontextprotocol/sdk (advisory, GHSA).
+# pnpm 11 reads `overrides` from here, not from package.json's `pnpm.overrides`.
+#   fast-uri  — SSRF / host-confusion (GHSA-f65p-4m7j-42xc et al.), patched >=3.1.6
+#   qs        — DoS / array-limit bypass, patched >=6.16.0
+#   hono      — parseBody / toSSG issues, patched >=4.13.5
+overrides:
+  fast-uri: '>=3.1.6 <4'
+  qs: '>=6.16.0'
+  hono: '>=4.13.5'

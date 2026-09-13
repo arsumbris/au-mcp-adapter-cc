@@ -1,0 +1,5 @@
+{
+  "name": "au-mcp-adapter-cc",
+  "version": "0.0.0",
+  "description": "Claude Code adapter for the au-mcp kernel: declares CC's native tool surface and bridges CC hooks to the daemon. Holds no deny/trace logic."
+}

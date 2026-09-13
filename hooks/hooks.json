@@ -1,0 +1,31 @@
+{
+  "hooks": {
+    "SessionStart": [
+      { "hooks": [ { "type": "command", "command": "node --experimental-strip-types \"${CLAUDE_PLUGIN_ROOT}/hooks/session-start.ts\"" } ] }
+    ],
+    "UserPromptSubmit": [
+      { "hooks": [ { "type": "command", "command": "node --experimental-strip-types \"${CLAUDE_PLUGIN_ROOT}/hooks/user-prompt-submit.ts\"" } ] }
+    ],
+    "PreToolUse": [
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "node --experimental-strip-types \"${CLAUDE_PLUGIN_ROOT}/hooks/pre-tool-use.ts\"" } ] }
+    ],
+    "PostToolUse": [
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "node --experimental-strip-types \"${CLAUDE_PLUGIN_ROOT}/hooks/post-tool-use.ts\"" } ] }
+    ],
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "node --experimental-strip-types \"${CLAUDE_PLUGIN_ROOT}/hooks/stop.ts\"" } ] }
+    ],
+    "SubagentStop": [
+      { "hooks": [ { "type": "command", "command": "node --experimental-strip-types \"${CLAUDE_PLUGIN_ROOT}/hooks/subagent-stop.ts\"" } ] }
+    ],
+    "PreCompact": [
+      { "hooks": [ { "type": "command", "command": "node --experimental-strip-types \"${CLAUDE_PLUGIN_ROOT}/hooks/pre-compact.ts\"" } ] }
+    ],
+    "Notification": [
+      { "hooks": [ { "type": "command", "command": "node --experimental-strip-types \"${CLAUDE_PLUGIN_ROOT}/hooks/notification.ts\"" } ] }
+    ],
+    "SessionEnd": [
+      { "hooks": [ { "type": "command", "command": "node --experimental-strip-types \"${CLAUDE_PLUGIN_ROOT}/hooks/session-end.ts\"" } ] }
+    ]
+  }
+}

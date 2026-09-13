@@ -1,0 +1,20 @@
+# mcp.adapter.cc — this repo's self-declared adapter DISCOVERY node. A launcher (au-host)
+# enumerates it off the engine `subtypes('mcp.adapter')` read, resolves this repo's dir from
+# the def's `source.file`, and spawns via the entries below. The kernel never loads it.
+#
+# IDENTITY is this type's NAME (`mcp.adapter.cc`); the live adapter reports the SAME string as
+# `AdapterInfo.harness` (src/surface.ts), so a launcher joins them by name. No identity field.
+#
+# Requires au-mcp-sdk as a dep (.arsumbris/repo.yaml) to cross `mcp.adapter::au-mcp-sdk`, and
+# this repo must be a member of the served workspace or the node is not discovered.
+extends: mcp.adapter::au-mcp-sdk
+meta:
+  - type: adapter-runtime-meta::au-mcp-sdk
+    contractVersion: 0
+    agentBinary: claude
+    launchEntry: ./bin/launch.ts
+    skillsEntry: ./bin/gen-skills.ts
+    injectEntry: ./bin/gen-inject.ts
+  - type: adapter-presentation-meta::au-mcp-sdk
+    description: "Bridges Claude Code hooks + MCP surface to the au-mcp daemon."
+    label: "Claude Code"

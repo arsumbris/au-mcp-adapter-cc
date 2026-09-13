@@ -1,0 +1,10 @@
+# Schema-12 repo identity + deps (au.engine.repo). Transformed from the former
+# repo-registry.yaml (self -> name/description, peers -> deps) for the schema-12
+# cross-repo resolution redesign.
+type: au.engine.repo::au-engine
+name: au-mcp-adapter-cc
+description: the Claude Code adapter — bridges CC's hooks and MCP surface to the
+  au-mcp daemon, and extends the SDK's session-event vocabulary with CC-specific
+  kinds (tool_unavailable, capture_error)
+deps:
+  - name: au-mcp-sdk
